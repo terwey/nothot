@@ -12,7 +12,7 @@ Send this file: <input name="image" type="file" />
 </form>
 <?php
 } else {
-	var_dump($_POST);
+	// var_dump($_POST);
 	var_dump($_FILES['image']);
 
 	$image = new Image($_FILES['image']);
