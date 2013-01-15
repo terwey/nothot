@@ -45,7 +45,7 @@ class Image {
 				}
 			} else {
 				$db = new database();
-				$db->setupDB();
+				// $db->setupDB();
 				$data = array(
 					'hash' => $hash,
 					'extension' => $this->fileExtension,
