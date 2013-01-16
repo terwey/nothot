@@ -46,6 +46,14 @@ Class database {
 		}
 	}
 
+	public function getImage($id) {
+		$query = 'SELECT id, hash, extension, title FROM image WHERE id = :id';
+		$stmt = $this->dbfile->prepare($query);
+		$stmt->bindParam(':id', $id);
+		$stmt->execute();
+		return $stmt->fetch(PDO::FETCH_ASSOC);
+	}
+
 	public function getImages($amount) {
 		$query = 'SELECT id, hash, extension, title FROM image LIMIT :limit';
 		$stmt = $this->dbfile->prepare($query);

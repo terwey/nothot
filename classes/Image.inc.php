@@ -19,20 +19,22 @@ class Image {
 
 	public function __construct($file) {
 		$this->file = $file;
-		$this->processImage();
+		if (is_array($this->file)) { // let's assume it's a new image
+			$this->processImage();
+		}
 	}
 
 	private function processImage() {
 		$this->originalname = $this->file['name'];
 		$this->tmpFile = $this->file['tmp_name'];
 		if ($this->checkFileMIME($this->file['type'])) {
-			$this->saveFile();
+			$this->saveImage();
 		} else {
 			die('Illegal file type');
 		}
 	}
 
-	private function saveFile() {
+	private function saveImage() {
 		$hash = sha1_file($this->tmpFile);
 		$destination = ROOTDIR .'/'. DATADIR .'/'. $hash .'.'. $this->fileExtension;
 
@@ -56,6 +58,20 @@ class Image {
 			}
 		} else {
 			die('File already exists');
+		}
+	}
+
+	public function getImage() {
+		$db = new database();
+		$result = $db->getImage($this->file);
+
+		$info = array(
+			'id' => $result['id'],
+			'title' => $result['title'],
+			'src' => DATADIR .'/'. $result['hash'] .'.'. $result['extension']
+		);
+		if ($result) {
+			return json_encode($info);
 		}
 	}
 
