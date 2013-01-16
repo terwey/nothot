@@ -96,7 +96,7 @@ class Image {
 	}
 }
 
-
+// deprecated!
 function getImages($amount) {
 	$db = new database();
 	$result = $db->getImages($amount);
