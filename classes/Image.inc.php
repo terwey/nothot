@@ -45,7 +45,6 @@ class Image {
 				}
 			} else {
 				$db = new database();
-				// $db->setupDB();
 				$data = array(
 					'hash' => $hash,
 					'extension' => $this->fileExtension,
@@ -81,10 +80,10 @@ class Image {
 	}
 }
 
+
 function getImages($amount) {
 	$db = new database();
 	$result = $db->getImages($amount);
-	// var_dump($result);
 
 	foreach ($result as $image) {
 		print '<strong>'.$image['title'].'</strong><br /><img src=" '. DATADIR .'/'. $image['hash'] .'.'. $image['extension'].'" /> <br /><br />';
