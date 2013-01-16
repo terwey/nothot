@@ -46,6 +46,14 @@ Class database {
 		}
 	}
 
+	public function getImages($amount) {
+		$query = 'SELECT id, hash, extension, title FROM image LIMIT :limit';
+		$stmt = $this->dbfile->prepare($query);
+		$stmt->bindParam(':limit', $amount);
+		$stmt->execute();
+		return $stmt->fetchAll();
+	}
+
 	public function setupDB() {
 		$imageTable = 'CREATE TABLE image (
 			id INTEGER PRIMARY KEY,
