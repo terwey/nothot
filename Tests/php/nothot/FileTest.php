@@ -3,8 +3,10 @@
 namespace nothot;
 
 class FileTest extends \PHPUnit_Framework_TestCase {
+	private $_files_array;
+
 	protected function setUp() {
-		$_FILES = array(
+		$this->_files_array = array(
 			'file_valid'    =>  array(
 				'name'      =>  'foo.txt',
 				'tmp_name'  =>  '/tmp/php42up23',
@@ -15,10 +17,15 @@ class FileTest extends \PHPUnit_Framework_TestCase {
 		);
 	}
 
+	protected function tearDown() {
+		$this->_files_array = array();
+	}
+
 	function testNewFile() {
-		var_dump($_FILES['file_valid']);
-		$file = new File($_FILES['file_valid']);
+		var_dump($this->_files_array['file_valid']);
+		$file = new File($this->_files_array['file_valid']);
 		$this->assertInstanceOf('nothot\File', $file);
+		$this->assertEquals('foo.txt', $file->name());
 		return $file;
 	}
 
@@ -46,9 +53,9 @@ class FileTest extends \PHPUnit_Framework_TestCase {
 	/**
 	 * @depends testNewFile
 	 **/
-	function testGetFileHash(File $file) {
-		$file->hash();
-	}
+	// function testGetFileHash(File $file) {
+	// 	$file->hash();
+	// }
 
 	/**
 	 * @depends testNewFile

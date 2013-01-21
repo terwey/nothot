@@ -12,10 +12,15 @@ class File {
 	private $_size;
 	private $_description;
 
-	public function __constructor($file_array) {
-		$this->_name = $file_array['name'];
-		$this->_tmpName = $file_array['tmp_name'];
-		return $this;
+	public function __constructor(array $file_array) {
+		// if (is_array($file_array)) {
+			var_dump($file_array);
+			$this->_name = $file_array['name'];
+			$this->_tmpName = $file_array['tmp_name'];
+			return $this;
+		// } else {
+		// 	throw new Exception('Parameter is not an array.');
+		// }
 	}
 
 	public function name() {
