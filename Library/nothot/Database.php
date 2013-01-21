@@ -1,6 +1,6 @@
 <?php
 
-Class database {
+Class nothot_Database {
 	private $dbfile;
 
 	public function __construct() {

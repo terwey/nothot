@@ -1,7 +1,7 @@
 <?php
 include('db.php');
 
-class Image {
+class nothot_Image {
 	private $file;
 	private $tmpFile;
 	private $fileMIME;
