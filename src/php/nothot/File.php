@@ -12,7 +12,7 @@ class File {
 	private $_size;
 	private $_description;
 
-	public function __constructor(array $file_array) {
+	public function __construct(array $file_array) {
 		// if (is_array($file_array)) {
 			var_dump($file_array);
 			$this->_name = $file_array['name'];
