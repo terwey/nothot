@@ -3,3 +3,4 @@ data/*
 /vendor/
 composer.lock
 .DS_Store
+phpunit.xml
