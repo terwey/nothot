@@ -5,8 +5,4 @@
 			<directory>Tests</directory>
 		</testsuite>
 	</testsuites>
-	<php>
-		<includePath>./Tests</includePath>
-		<includePath>./Library</includePath>
-	</php>
 </phpunit>

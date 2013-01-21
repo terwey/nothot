@@ -1,5 +1,4 @@
 <?php
-include('db.php');
 
 class nothot_Image {
 	private $file;
