@@ -1,6 +1,8 @@
 <?php
 
-Class nothot_Database {
+namespace nothot;
+
+Class Database {
 	private $dbfile;
 
 	public function __construct() {

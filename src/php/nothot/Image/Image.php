@@ -1,6 +1,8 @@
 <?php
 
-class nothot_Image {
+namespace nothot;
+
+class Image {
 	private $file;
 	private $tmpFile;
 	private $fileMIME;

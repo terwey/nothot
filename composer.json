@@ -5,8 +5,8 @@
         "phpunit/phpunit": "3.7.*"
     },
     "autoload": {
-        "psr-0": {
-            "nothot": "Library"
+        "psr-0": { 
+            "nothot" : "src/php"
         }
     },
     "authors": [
