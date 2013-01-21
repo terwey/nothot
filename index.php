@@ -1,7 +1,7 @@
 <?php
 
 require('config.inc.php');
-require('classes/Image.inc.php');
+require('Library/nothot/Image.php');
 
 include('header.inc.php');
 

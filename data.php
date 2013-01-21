@@ -1,7 +1,7 @@
 <?php
 
 include('config.inc.php');
-include('classes/Image.inc.php');
+include('Library/nothot/Image.php');
 
 if (isset($_GET['id'])) {
 	$image = new Image($_GET['id']);

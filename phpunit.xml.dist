@@ -7,6 +7,6 @@
 	</testsuites>
 	<php>
 		<includePath>./Tests</includePath>
-		<includePath>./Class</includePath>
+		<includePath>./Library</includePath>
 	</php>
 </phpunit>
